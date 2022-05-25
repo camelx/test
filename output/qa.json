@@ -1,0 +1,10 @@
+{
+  "url": "http://nfz.gov.pl/poz-plus/ImplementationGuide/nfz.pozplus",
+  "name": "POZPlus",
+  "package-id": "nfz.pozplus",
+  "ig-ver": "4.0.1",
+  "date": "Wed, 25 May, 2022 21:51:40 +0200",
+  "exception": "Error generating snapshot for Kwestionariusz bilansowy(PLNfzCCHealthBalanceQuestionnaireResponse): Unable to generate snapshot for http://nfz.gov.pl/poz-plus/StructureDefinition/PLNfzCCHealthBalanceQuestionnaireResponse in /Users/marcingrudzien/Library/CloudStorage/OneDrive-Osobisty/Praca/iEHReu/NFZ/POZ-Plus/FHIR/sushi-test/NfzTest/fsh-generated/resources/structuredefinition-PLNfzCCHealthBalanceQuestionnaireResponse",
+  "version": "4.0.1",
+  "tool": "5.0.0-snapshot1 (3)"
+}
