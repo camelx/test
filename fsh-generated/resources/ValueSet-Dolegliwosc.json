@@ -1,0 +1,127 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Dolegliwosc",
+  "id": "Dolegliwosc",
+  "title": "Dolegliwość",
+  "description": "Dolegliwość",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Dolegliwosc",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.26",
+        "concept": [
+          {
+            "code": "PWT",
+            "display": "pogarszająca się tolerancja wysiłku"
+          },
+          {
+            "code": "SMC",
+            "display": "spadek masy ciała"
+          },
+          {
+            "code": "ZMC",
+            "display": "zwiększenie masy ciała"
+          },
+          {
+            "code": "POB",
+            "display": "powiększenie obwodu brzucha"
+          },
+          {
+            "code": "ZUP",
+            "display": "zaburzenia ze strony układu pokarmowego"
+          },
+          {
+            "code": "BBR",
+            "display": "ostre lub przewlekłe bóle brzucha"
+          },
+          {
+            "code": "ZWY",
+            "display": "zaburzenia wypróżniania"
+          },
+          {
+            "code": "BBO",
+            "display": "ból brzuch i okolic odbytu, w tym przy wypróżnianiu"
+          },
+          {
+            "code": "SOD",
+            "display": "świąd odbytu"
+          },
+          {
+            "code": "KOS",
+            "display": "krwawienie z odbytu / krew w stolcu"
+          },
+          {
+            "code": "ZDR",
+            "display": "nawracające stany zapalne dróg rodnych"
+          },
+          {
+            "code": "KRM",
+            "display": "krwiomoc"
+          },
+          {
+            "code": "CZM",
+            "display": "częstomocz"
+          },
+          {
+            "code": "TOM",
+            "display": "trudności w oddawaniu moczu"
+          },
+          {
+            "code": "BKP",
+            "display": "ból krocza i podbrzusza"
+          },
+          {
+            "code": "ZMS",
+            "display": "zaburzenia miesiączkowania"
+          },
+          {
+            "code": "WZP",
+            "display": "wyczuwalne zmiany w piersi"
+          },
+          {
+            "code": "WBR",
+            "display": "wyciek z brodawek"
+          },
+          {
+            "code": "POS",
+            "display": "powiększenie obwodu szyi"
+          },
+          {
+            "code": "WZT",
+            "display": "wyczuwalne zmiany w obrębie tarczycy"
+          },
+          {
+            "code": "KST",
+            "display": "kołatanie serca / tachykardia"
+          },
+          {
+            "code": "BKL",
+            "display": "ból w klatce piersiowej"
+          },
+          {
+            "code": "DUS",
+            "display": "duszność"
+          },
+          {
+            "code": "KPL",
+            "display": "krwioplucie"
+          },
+          {
+            "code": "NDK",
+            "display": "niepokojący lub długoutrzymujący się kaszel"
+          },
+          {
+            "code": "OBR",
+            "display": "obrzęki"
+          },
+          {
+            "code": "BST",
+            "display": "bóle stawów kończyn dolnych"
+          }
+        ]
+      }
+    ]
+  }
+}

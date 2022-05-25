@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PowodNiePodjeciaProbyOgraniczeniaUzywki",
+  "id": "PowodNiePodjeciaProbyOgraniczeniaUzywki",
+  "title": "Powody nie podjęcia próby ograniczenia używki",
+  "description": "Powody nie podjęcia próby ograniczenia używki",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/PowodNiePodjeciaProbyOgraniczeniaUzywki",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.38",
+        "concept": [
+          {
+            "code": "M",
+            "display": "brak dostatecznej motywacji"
+          },
+          {
+            "code": "W",
+            "display": "brak silnej woli"
+          },
+          {
+            "code": "P",
+            "display": "przeświadczenie o braku wpływu używki na zdrowie"
+          }
+        ]
+      }
+    ]
+  }
+}

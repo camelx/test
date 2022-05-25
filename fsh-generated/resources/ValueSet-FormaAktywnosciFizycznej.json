@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "FormaAktywnosciFizycznej",
+  "id": "FormaAktywnosciFizycznej",
+  "title": "Forma aktywności fizycznej",
+  "description": "Forma aktywności fizycznej",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/FormaAktywnosciFizycznej",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.32",
+        "concept": [
+          {
+            "code": "BG",
+            "display": "bieganie"
+          },
+          {
+            "code": "AR",
+            "display": "aerobik"
+          },
+          {
+            "code": "PL",
+            "display": "pływanie"
+          },
+          {
+            "code": "GZ",
+            "display": "gry zespołowe"
+          },
+          {
+            "code": "NW",
+            "display": "nordic-walking"
+          },
+          {
+            "code": "RR",
+            "display": "jazda na rowerze/rolkach"
+          },
+          {
+            "code": "SW",
+            "display": "sztuki walki"
+          }
+        ]
+      }
+    ]
+  }
+}

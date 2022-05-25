@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Wyksztalcenie",
+  "id": "Wyksztalcenie",
+  "title": "Wykształcenie",
+  "description": "Wykształcenie",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Wyksztalcenie",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "concept": [
+          {
+            "code": "224295006",
+            "display": "Only received primary school education (finding)"
+          },
+          {
+            "code": "224297003",
+            "display": "Educated to secondary school level (finding)"
+          },
+          {
+            "code": "473461003",
+            "display": "Educated to high school level (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

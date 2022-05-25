@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PalenieTytoniu",
+  "id": "PalenieTytoniu",
+  "title": "Palenie tytoniu",
+  "description": "Palenie tytoniu",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/PalenieTytoniu",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.35",
+        "concept": [
+          {
+            "code": "T",
+            "display": "Tak"
+          },
+          {
+            "code": "N",
+            "display": "Nie"
+          },
+          {
+            "code": "O",
+            "display": "Palę w ograniczonym zakresie"
+          }
+        ]
+      }
+    ]
+  }
+}

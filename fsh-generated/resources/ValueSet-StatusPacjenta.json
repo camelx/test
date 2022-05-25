@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "StatusPacjenta",
+  "id": "StatusPacjenta",
+  "title": "Status pacjenta",
+  "description": "Status pacjenta",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/StatusPacjenta",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.31",
+        "concept": [
+          {
+            "code": "A",
+            "display": "zdrowy - bez czynników ryzyka"
+          },
+          {
+            "code": "B",
+            "display": "zdrowy (bez objawów) z czynnikami ryzyka"
+          },
+          {
+            "code": "C",
+            "display": "chory przewlekle (aktualnie bez objawów) - stabilny"
+          },
+          {
+            "code": "D",
+            "display": "chory przewlekle (aktualnie z objawami) - wymagający stabilizacji"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "RodzajZaproszenia",
+  "id": "RodzajZaproszenia",
+  "title": "Rodzaj zaproszenia w do bilansu zdroiwa",
+  "description": "Rodzaj zaproszenia do bilansu zdrowia",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/RodzajZaproszenia",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.45",
+        "concept": [
+          {
+            "code": "IW",
+            "display": "na innej wizycie"
+          },
+          {
+            "code": "PR",
+            "display": "przy rejestracji"
+          },
+          {
+            "code": "MA",
+            "display": "mailowo"
+          },
+          {
+            "code": "TL",
+            "display": "telefonicznie"
+          },
+          {
+            "code": "RK",
+            "display": "reklamy"
+          },
+          {
+            "code": "IO",
+            "display": "przez inną osobę"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProgramZarzadzaniaChoroba",
+  "id": "ProgramZarzadzaniaChoroba",
+  "title": "Program zarządzania chorbą",
+  "description": "Program zarządzania chorbą",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/ProgramZarzadzaniaChoroba",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.28",
+        "concept": [
+          {
+            "code": "CT2",
+            "display": "Cukrzyca typu 2"
+          },
+          {
+            "code": "NTS",
+            "display": "Nadciśnienie tętnicze samoistne"
+          },
+          {
+            "code": "CHW",
+            "display": "Przewlekła choroba wieńcowa"
+          },
+          {
+            "code": "PNS",
+            "display": "Przewlekła niewydolność serca"
+          },
+          {
+            "code": "UMP",
+            "display": "Utrwalone migotanie przedsionków"
+          },
+          {
+            "code": "ASO",
+            "display": "Astma oskrzelowa"
+          },
+          {
+            "code": "PCP",
+            "display": "Przewlekła Obturacyjna Choroba Płuc"
+          },
+          {
+            "code": "NIT",
+            "display": "Niedoczynność tarczycy"
+          },
+          {
+            "code": "WMG",
+            "display": "Wole miąszowe lub guzowate"
+          },
+          {
+            "code": "ZSO",
+            "display": "Choroba zwyrodnieniowa stawów obwodowych"
+          },
+          {
+            "code": "ZBK",
+            "display": "Zespoły bólowe kręgosłupa"
+          }
+        ]
+      }
+    ]
+  }
+}

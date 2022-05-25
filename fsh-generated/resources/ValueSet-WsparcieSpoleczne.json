@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "WsparcieSpoleczne",
+  "id": "WsparcieSpoleczne",
+  "title": "Wsparcie społeczne",
+  "description": "Wsparcie społeczne",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/WsparcieSpoleczne",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.23",
+        "concept": [
+          {
+            "code": "Z",
+            "display": "w związku lub prowadzi gospodarstwo domowe z inną osobą"
+          },
+          {
+            "code": "S",
+            "display": "stan wolny lub prowadzi gospodarstwo domowe samodzielnie"
+          }
+        ]
+      }
+    ]
+  }
+}

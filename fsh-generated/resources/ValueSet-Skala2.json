@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala2",
+  "id": "Skala2",
+  "title": "Skala 2",
+  "description": "Skala 2",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala2",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.2",
+        "concept": [
+          {
+            "code": "A",
+            "display": "nie uprawiam"
+          },
+          {
+            "code": "B",
+            "display": "1-2 razy w tygodniu"
+          },
+          {
+            "code": "C",
+            "display": "3-4 razy w tygodniu"
+          },
+          {
+            "code": "D",
+            "display": "częściej niż 4 razy w tygodniu"
+          }
+        ]
+      }
+    ]
+  }
+}

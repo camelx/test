@@ -1,0 +1,51 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BadaniaWBilansiePodstawowym",
+  "id": "BadaniaWBilansiePodstawowym",
+  "title": "Badania w bilansie podstawowym",
+  "description": "Badania w bilansie podstawowym",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/BadaniaWBilansiePodstawowym",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "concept": [
+          {
+            "code": "C55",
+            "display": "Morfologia"
+          },
+          {
+            "code": "C59",
+            "display": "OB"
+          },
+          {
+            "code": "A01",
+            "display": "Ogólne badanie moczu"
+          },
+          {
+            "code": "L43",
+            "display": "Glukoza we krwi zylnej"
+          },
+          {
+            "code": "I99",
+            "display": "Cholesterol całkowity"
+          },
+          {
+            "code": "K01",
+            "display": "Cholesterol HDL"
+          },
+          {
+            "code": "K03",
+            "display": "Cholesterol LDL"
+          },
+          {
+            "code": "O49",
+            "display": "Triglicerydy"
+          }
+        ]
+      }
+    ]
+  }
+}

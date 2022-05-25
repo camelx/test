@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "RodzajWizytyKontrolnej",
+  "id": "RodzajWizytyKontrolnej",
+  "title": "Rodzaj wizyty kontrolnej",
+  "description": "Rodzaj wizyty kontrolnej",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/RodzajWizytyKontrolnej",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.46",
+        "concept": [
+          {
+            "code": "3M",
+            "display": "po 3-ch miesiącach"
+          },
+          {
+            "code": "6M",
+            "display": "po 6-ciu miesiącach"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Zawod",
+  "id": "Zawod",
+  "title": "Zawód",
+  "description": "Zawód",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Zawod",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.24",
+        "concept": [
+          {
+            "code": "PB",
+            "display": "pracownik biurowy"
+          },
+          {
+            "code": "PF",
+            "display": "pracownik fizyczny"
+          },
+          {
+            "code": "PGH",
+            "display": "pracownik gastronomii / hotelarstwa"
+          },
+          {
+            "code": "PSZ",
+            "display": "pracownik medyczny / słuby zdrowia"
+          },
+          {
+            "code": "PSM",
+            "display": "pracownik słub mundurowych"
+          },
+          {
+            "code": "NW",
+            "display": "nauczyciel / wykładowca"
+          },
+          {
+            "code": "KZ",
+            "display": "kierowca zawodowy"
+          },
+          {
+            "code": "SP",
+            "display": "sportowiec"
+          },
+          {
+            "code": "GO",
+            "display": "górnik"
+          },
+          {
+            "code": "RH",
+            "display": "rolnik / hodowca"
+          },
+          {
+            "code": "MO",
+            "display": "mechanik / monter / operator maszyn"
+          },
+          {
+            "code": "NP",
+            "display": "nie pracuje"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "PomiarAntropometryczny",
+  "id": "PomiarAntropometryczny",
+  "title": "Pomiar antropometryczny",
+  "description": "Pomiar antropometryczny",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/PomiarAntropometryczny",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "concept": [
+          {
+            "code": "27113001",
+            "display": "Body weight (observable entity)"
+          },
+          {
+            "code": "1153637007",
+            "display": "Body height (observable entity)"
+          },
+          {
+            "code": "60621009",
+            "display": "Body mass index (observable entity)"
+          }
+        ]
+      }
+    ]
+  }
+}

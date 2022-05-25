@@ -1,0 +1,51 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "MetodaRzucaniaPalenia",
+  "id": "MetodaRzucaniaPalenia",
+  "title": "Metoda rzucania palenia",
+  "description": "Metoda rzucania palenia",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/MetodaRzucaniaPalenia",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.34",
+        "concept": [
+          {
+            "code": "PL",
+            "display": "plastry"
+          },
+          {
+            "code": "GZ",
+            "display": "gumy do żucia"
+          },
+          {
+            "code": "TS",
+            "display": "tabletki do ssania"
+          },
+          {
+            "code": "SN",
+            "display": "spray do nosa"
+          },
+          {
+            "code": "SZ",
+            "display": "szczepionka"
+          },
+          {
+            "code": "EP",
+            "display": "e-papieros"
+          },
+          {
+            "code": "MN",
+            "display": "metoda niekonwencjonalna (np. hipnoza, akupunktura, biorezonans)"
+          },
+          {
+            "code": "BW",
+            "display": "żadne z powyższych - całkowita rezygnacja (bez wspomagania)"
+          }
+        ]
+      }
+    ]
+  }
+}

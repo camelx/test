@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala8",
+  "id": "Skala8",
+  "title": "Skala 8",
+  "description": "Skala 8",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala8",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.8",
+        "concept": [
+          {
+            "code": "A",
+            "display": "niskie (poniżej 1%)"
+          },
+          {
+            "code": "B",
+            "display": "umiarkowane (od 1% do 4%)"
+          },
+          {
+            "code": "C",
+            "display": "zwiększone (5% do 9%)"
+          },
+          {
+            "code": "D",
+            "display": "znacznie zwiększone (10% i więcej)"
+          }
+        ]
+      }
+    ]
+  }
+}

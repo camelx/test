@@ -1,0 +1,51 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala9",
+  "id": "Skala9",
+  "title": "Skala 9",
+  "description": "Skala 9",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala9",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.9",
+        "concept": [
+          {
+            "code": "WG",
+            "display": "mniej niż 16 - wygłodzenie"
+          },
+          {
+            "code": "WC",
+            "display": "od 16 do 16,99 - wychudzenie"
+          },
+          {
+            "code": "NI",
+            "display": "od 17 do 18,49 - niedowaga"
+          },
+          {
+            "code": "WP",
+            "display": "od 18,5 do 24,99 - wartość prawidłowa"
+          },
+          {
+            "code": "NA",
+            "display": "od 25 do 29,99 - nadwaga"
+          },
+          {
+            "code": "O1",
+            "display": "od 30 do 34,99 - I stopień otyłości"
+          },
+          {
+            "code": "O2",
+            "display": "od 35 do 39,99 - II stopień otyłości"
+          },
+          {
+            "code": "OS",
+            "display": "powyżek 40 - otyłość skrajna"
+          }
+        ]
+      }
+    ]
+  }
+}

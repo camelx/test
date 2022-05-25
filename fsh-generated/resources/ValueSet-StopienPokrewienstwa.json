@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "StopienPokrewienstwa",
+  "id": "StopienPokrewienstwa",
+  "title": "Stopień pokrewieństwa",
+  "description": "Stopień pokrewieństwa",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/StopienPokrewienstwa",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "concept": [
+          {
+            "code": "MTH",
+            "display": "Mother"
+          },
+          {
+            "code": "FTH",
+            "display": "Father"
+          },
+          {
+            "code": "BRO",
+            "display": "Brother"
+          },
+          {
+            "code": "SIS",
+            "display": "Sister"
+          },
+          {
+            "code": "SONC",
+            "display": "Son"
+          },
+          {
+            "code": "DAUC",
+            "display": "Daughter"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala21",
+  "id": "Skala21",
+  "title": "Skala 21",
+  "description": "Skala 21",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala21",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.22",
+        "concept": [
+          {
+            "code": "N",
+            "display": "w normie"
+          },
+          {
+            "code": "S",
+            "display": "picie szkodliwe"
+          },
+          {
+            "code": "R",
+            "display": "ryzyko uzależnienia"
+          }
+        ]
+      }
+    ]
+  }
+}

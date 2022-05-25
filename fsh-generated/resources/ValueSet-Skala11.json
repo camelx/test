@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala11",
+  "id": "Skala11",
+  "title": "Skala 11",
+  "description": "Skala 11",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala11",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.11",
+        "concept": [
+          {
+            "code": "B",
+            "display": "< 60 uderzeń na minutę - wolna czynność serca (bradykardia)"
+          },
+          {
+            "code": "N",
+            "display": "60-100 uderzeń na minutę - wynik w normie"
+          },
+          {
+            "code": "T",
+            "display": "> 100 uderzeń na minutę - przyspieszona czynność serca (tachykardia)"
+          }
+        ]
+      }
+    ]
+  }
+}

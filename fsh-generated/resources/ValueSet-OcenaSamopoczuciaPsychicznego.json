@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "OcenaSamopoczuciaPsychicznego",
+  "id": "OcenaSamopoczuciaPsychicznego",
+  "title": "Ocena samopoczucia psychicznego",
+  "description": "Ocena samopoczucia psychicznego",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/OcenaSamopoczuciaPsychicznego",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.30",
+        "concept": [
+          {
+            "code": "A",
+            "display": "Wysokie prawdopodobieństwo zaburzeń depresyjnych. Konieczność przeprowadzenia wywiadu w kierunku zaburzeń depresyjnych lub innych zaburzeń psychicznych."
+          },
+          {
+            "code": "B",
+            "display": "Konieczność przeprowadzenia wywiadu w kierunku zaburzeń depresyjnych lub innych zaburzeń psychicznych."
+          },
+          {
+            "code": "C",
+            "display": "Ewentualny wywiad pogłębiony w kierunku potrzeb pacjenta do decyzji lekarza."
+          },
+          {
+            "code": "D",
+            "display": "Brak konieczności przeprowadzenia wywiadu w kierunku zaburzeń depresyjnych lub innych zaburzeń psychicznych."
+          }
+        ]
+      }
+    ]
+  }
+}

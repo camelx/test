@@ -1,0 +1,103 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "OcenaNarzaduLubUkladuWBadaniuFizykalnym",
+  "id": "OcenaNarzaduLubUkladuWBadaniuFizykalnym",
+  "title": "Ocena narządu lub układu w badaniu fizykalnym",
+  "description": "Ocena narządu lub układu w badaniu fizykalnym",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/OcenaNarzaduLubUkladuWBadaniuFizykalnym",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "concept": [
+          {
+            "code": "225544001",
+            "display": "Skin appearance normal (finding)"
+          },
+          {
+            "code": "301855007",
+            "display": "Finding of lymph node (finding)"
+          },
+          {
+            "code": "128145008",
+            "display": "Mucosal finding (finding)"
+          },
+          {
+            "code": "840673007",
+            "display": "Normal head (finding)"
+          },
+          {
+            "code": "45089002",
+            "display": "Normal vision (finding)"
+          },
+          {
+            "code": "860970003",
+            "display": "Normal eye proper (finding)"
+          },
+          {
+            "code": "162339002",
+            "display": "Hearing normal (finding)"
+          },
+          {
+            "code": "300196000",
+            "display": "Ear normal (finding)"
+          },
+          {
+            "code": "299900007",
+            "display": "Sense of smell normal (finding)"
+          },
+          {
+            "code": "301198009",
+            "display": "Nose normal (finding)"
+          },
+          {
+            "code": "301206009",
+            "display": "Nasopharynx normal (finding)"
+          },
+          {
+            "code": "860975008",
+            "display": "Normal dentition (finding)"
+          },
+          {
+            "code": "840674001",
+            "display": "Normal neck region (finding)"
+          },
+          {
+            "code": "830011000",
+            "display": "Normal chest (finding)"
+          },
+          {
+            "code": "290084006",
+            "display": "Breast normal (finding)"
+          },
+          {
+            "code": "22803001",
+            "display": "Normal respiratory function (finding)"
+          },
+          {
+            "code": "61618002",
+            "display": "Normal cardiovascular function (finding)"
+          },
+          {
+            "code": "300305002",
+            "display": "Stomach normal (finding)"
+          },
+          {
+            "code": "1149389007",
+            "display": "Normal urinary system function (finding)"
+          },
+          {
+            "code": "300313001",
+            "display": "Normal rectum (finding)"
+          },
+          {
+            "code": "302261000",
+            "display": "Nervous system normal (finding)"
+          }
+        ]
+      }
+    ]
+  }
+}

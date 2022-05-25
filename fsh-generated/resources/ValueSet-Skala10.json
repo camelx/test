@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala10",
+  "id": "Skala10",
+  "title": "Skala 10",
+  "description": "Skala 10",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala10",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.10",
+        "concept": [
+          {
+            "code": "CO",
+            "display": "skurczowe <120 i/lub rozkurczowe <80 - ciśnienie optymalne"
+          },
+          {
+            "code": "CP",
+            "display": "skurczowe 120-129 i/lub rozkurczowe 80-84 - ciśnienie prawidłowe"
+          },
+          {
+            "code": "CW",
+            "display": "skurczowe 130-139 i/lub rozkurczowe 85-89 - ciśnienie wysokie prawidłowe"
+          },
+          {
+            "code": "NL",
+            "display": "skurczowe 140-159 i/lub rozkurczowe 90-99  - nadciśnienie 1 stopnia (łagodne)"
+          },
+          {
+            "code": "NU",
+            "display": "skurczowe 160-179 i/lub rozkurczowe 100-109 - nadciśnienie 2 stopnia (umiarkowane)"
+          },
+          {
+            "code": "NC",
+            "display": "skurczowe >= 180 i/lub rozkurczowe >=110 - nadciśnienie 3 stopnia (ciężkie)"
+          },
+          {
+            "code": "NI",
+            "display": "skurczowe >= 140 i rozkurczowe <90 - nadciśnienie izolowane skurczowe"
+          }
+        ]
+      }
+    ]
+  }
+}

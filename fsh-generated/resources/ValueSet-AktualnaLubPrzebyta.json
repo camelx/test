@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "AktualnaLubPrzebyta",
+  "id": "AktualnaLubPrzebyta",
+  "title": "Aktualna lub przebyta",
+  "description": "Aktualna lub przebyta",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/AktualnaLubPrzebyta",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "concept": [
+          {
+            "code": "6493001",
+            "display": "Recent (qualifier value)"
+          },
+          {
+            "code": "410587003",
+            "display": "Past - time specified (qualifier value)"
+          }
+        ]
+      }
+    ]
+  }
+}

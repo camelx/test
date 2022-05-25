@@ -1,0 +1,35 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala7",
+  "id": "Skala7",
+  "title": "Skala 7",
+  "description": "Skala 7",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala7",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.7",
+        "concept": [
+          {
+            "code": "A",
+            "display": "0 pacjent wolny od uzależnienia (nie pali tytoniu)"
+          },
+          {
+            "code": "B",
+            "display": "1-3 niski stopień uzależnienia"
+          },
+          {
+            "code": "C",
+            "display": "4-6 średni stopień uzależnienia"
+          },
+          {
+            "code": "D",
+            "display": "7-10 silny stopień uzależnienia"
+          }
+        ]
+      }
+    ]
+  }
+}

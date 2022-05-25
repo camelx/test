@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala13",
+  "id": "Skala13",
+  "title": "Skala 13",
+  "description": "Skala 13",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala13",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.13",
+        "concept": [
+          {
+            "code": "A",
+            "display": "3 lub mniej"
+          },
+          {
+            "code": "B",
+            "display": "4"
+          },
+          {
+            "code": "C",
+            "display": "5 lub więcej"
+          }
+        ]
+      }
+    ]
+  }
+}

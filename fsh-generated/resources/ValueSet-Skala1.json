@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "Skala1",
+  "id": "Skala1",
+  "title": "Skala 1",
+  "description": "Skala 1",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/Skala1",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.1",
+        "concept": [
+          {
+            "code": "1",
+            "display": "1"
+          },
+          {
+            "code": "2",
+            "display": "2"
+          },
+          {
+            "code": "3",
+            "display": "3"
+          },
+          {
+            "code": "4",
+            "display": "4"
+          },
+          {
+            "code": "5",
+            "display": "5"
+          }
+        ]
+      }
+    ]
+  }
+}

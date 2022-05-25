@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "RolaWZespolePOZ",
+  "id": "RolaWZespolePOZ",
+  "title": "Rola w zespole POZ",
+  "description": "Rola w zespole POZ",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/RolaWZespolePOZ",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.39",
+        "concept": [
+          {
+            "code": "LP",
+            "display": "Lekarz POZ"
+          },
+          {
+            "code": "EZ",
+            "display": "Edukator zdrowotny"
+          },
+          {
+            "code": "DT",
+            "display": "Dietetyk"
+          },
+          {
+            "code": "FZ",
+            "display": "Fizjoterapeuta"
+          },
+          {
+            "code": "KS",
+            "display": "Konsultant specjalista"
+          }
+        ]
+      }
+    ]
+  }
+}

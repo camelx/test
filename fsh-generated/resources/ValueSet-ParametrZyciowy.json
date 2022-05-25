@@ -1,0 +1,31 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ParametrZyciowy",
+  "id": "ParametrZyciowy",
+  "title": "Parametr życiowy",
+  "description": "Parametr życiowy",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/ParametrZyciowy",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.6.96",
+        "concept": [
+          {
+            "code": "271649006",
+            "display": "Systolic blood pressure (observable entity)"
+          },
+          {
+            "code": "271650006",
+            "display": "Diastolic blood pressure (observable entity)"
+          },
+          {
+            "code": "364075005",
+            "display": "Heart rate (observable entity)"
+          }
+        ]
+      }
+    ]
+  }
+}

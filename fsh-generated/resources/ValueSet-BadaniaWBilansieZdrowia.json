@@ -1,0 +1,111 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "BadaniaWBilansieZdrowia",
+  "id": "BadaniaWBilansieZdrowia",
+  "title": "Badania w bilansie zdrowia",
+  "description": "Badania w bilansie zdrowia",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/BadaniaWBilansieZdrowia",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "concept": [
+          {
+            "code": "C55",
+            "display": "Morfologia"
+          },
+          {
+            "code": "C59",
+            "display": "OB"
+          },
+          {
+            "code": "A01",
+            "display": "Ogólne badanie moczu"
+          },
+          {
+            "code": "L43",
+            "display": "Glukoza we krwi zylnej"
+          },
+          {
+            "code": "I99",
+            "display": "Cholesterol całkowity"
+          },
+          {
+            "code": "K01",
+            "display": "Cholesterol HDL"
+          },
+          {
+            "code": "K03",
+            "display": "Cholesterol LDL"
+          },
+          {
+            "code": "O49",
+            "display": "Triglicerydy"
+          },
+          {
+            "code": "I17",
+            "display": "ALT"
+          },
+          {
+            "code": "I18",
+            "display": "AST"
+          },
+          {
+            "code": "L69",
+            "display": "TSH"
+          },
+          {
+            "code": "O69",
+            "display": "FT4"
+          },
+          {
+            "code": "O55",
+            "display": "FT3"
+          },
+          {
+            "code": "89.51",
+            "display": "EKG"
+          },
+          {
+            "code": "88.761",
+            "display": "USG jamy brzusznej"
+          },
+          {
+            "code": "88.732",
+            "display": "USG piersi"
+          },
+          {
+            "code": "88.713",
+            "display": "USG tarczycy i przytarczyc"
+          },
+          {
+            "code": "I61",
+            "display": "PSA"
+          },
+          {
+            "code": "88.763",
+            "display": "USG gruczołu krokowego"
+          },
+          {
+            "code": "87.440",
+            "display": "RTG klatki piersiowej"
+          },
+          {
+            "code": "M37",
+            "display": "Kreatynina"
+          },
+          {
+            "code": "M45",
+            "display": "Kwas moczowy"
+          },
+          {
+            "code": "88.981",
+            "display": "Densytometria"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PLNfzCCPatient",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Individuals"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://nfz.gov.pl/poz-plus/StructureDefinition/PLNfzCCPatient",
+  "version": "4.0.1",
+  "name": "PLNfzCCPatient",
+  "title": "Dane personalne pacjenta",
+  "status": "active",
+  "description": "Dane personalne pacjenta",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "loinc",
+      "uri": "http://loinc.org",
+      "name": "LOINC code for the element"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.identifier",
+        "path": "Patient.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.active",
+        "path": "Patient.active",
+        "max": "0"
+      },
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.name.use",
+        "path": "Patient.name.use",
+        "max": "0"
+      },
+      {
+        "id": "Patient.name.text",
+        "path": "Patient.name.text",
+        "max": "0"
+      },
+      {
+        "id": "Patient.name.family",
+        "path": "Patient.name.family",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.name.given",
+        "path": "Patient.name.given",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.name.prefix",
+        "path": "Patient.name.prefix",
+        "max": "0"
+      },
+      {
+        "id": "Patient.name.suffix",
+        "path": "Patient.name.suffix",
+        "max": "0"
+      },
+      {
+        "id": "Patient.name.period",
+        "path": "Patient.name.period",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom",
+        "path": "Patient.telecom",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "closed"
+        },
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:phone",
+        "path": "Patient.telecom",
+        "sliceName": "phone",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:phone.system",
+        "path": "Patient.telecom.system",
+        "min": 1,
+        "patternCode": "phone"
+      },
+      {
+        "id": "Patient.telecom:phone.value",
+        "path": "Patient.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:phone.use",
+        "path": "Patient.telecom.use",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom:phone.rank",
+        "path": "Patient.telecom.rank",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom:phone.period",
+        "path": "Patient.telecom.period",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom:email",
+        "path": "Patient.telecom",
+        "sliceName": "email",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:email.system",
+        "path": "Patient.telecom.system",
+        "min": 1,
+        "patternCode": "email"
+      },
+      {
+        "id": "Patient.telecom:email.value",
+        "path": "Patient.telecom.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.telecom:email.use",
+        "path": "Patient.telecom.use",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom:email.rank",
+        "path": "Patient.telecom.rank",
+        "max": "0"
+      },
+      {
+        "id": "Patient.telecom:email.period",
+        "path": "Patient.telecom.period",
+        "max": "0"
+      },
+      {
+        "id": "Patient.gender",
+        "path": "Patient.gender",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.birthDate",
+        "path": "Patient.birthDate",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.deceased[x]",
+        "path": "Patient.deceased[x]",
+        "max": "0"
+      },
+      {
+        "id": "Patient.address",
+        "path": "Patient.address",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Patient.address.use",
+        "path": "Patient.address.use",
+        "patternCode": "home"
+      },
+      {
+        "id": "Patient.multipleBirth[x]",
+        "path": "Patient.multipleBirth[x]",
+        "max": "0"
+      },
+      {
+        "id": "Patient.photo",
+        "path": "Patient.photo",
+        "max": "0"
+      },
+      {
+        "id": "Patient.contact",
+        "path": "Patient.contact",
+        "max": "0"
+      },
+      {
+        "id": "Patient.communication",
+        "path": "Patient.communication",
+        "max": "0"
+      },
+      {
+        "id": "Patient.generalPractitioner",
+        "path": "Patient.generalPractitioner",
+        "max": "0"
+      },
+      {
+        "id": "Patient.link",
+        "path": "Patient.link",
+        "max": "0"
+      }
+    ]
+  }
+}

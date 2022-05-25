@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "ProgramProfilaktyczny",
+  "id": "ProgramProfilaktyczny",
+  "title": "Program profilaktyczny",
+  "description": "Program profilaktyczny",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/ProgramProfilaktyczny",
+  "compose": {
+    "include": [
+      {
+        "system": "urn:oid:2.16.840.1.113883.3.4424.11.4.27",
+        "concept": [
+          {
+            "code": "CHUK",
+            "display": "Program profilaktyki chorób układu krążenia"
+          },
+          {
+            "code": "POCHP",
+            "display": "Program profilaktyki chorób odtytoniowych"
+          },
+          {
+            "code": "RSM",
+            "display": "Program profilaktyki raka szyjki macicy"
+          },
+          {
+            "code": "RS",
+            "display": "Program profilaktyki raka sutka"
+          },
+          {
+            "code": "RJG",
+            "display": "Program badań przesiewowych raka jelita grubego"
+          }
+        ]
+      }
+    ]
+  }
+}

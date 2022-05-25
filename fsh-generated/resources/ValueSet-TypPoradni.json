@@ -1,0 +1,10 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "TypPoradni",
+  "id": "TypPoradni",
+  "title": "TypPoradni",
+  "description": "TypPoradni",
+  "version": "4.0.1",
+  "url": "http://nfz.gov.pl/poz-plus/ValueSet/TypPoradni"
+}
