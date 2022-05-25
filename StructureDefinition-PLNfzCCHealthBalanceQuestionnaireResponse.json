@@ -1,0 +1,4500 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "PLNfzCCHealthBalanceQuestionnaireResponse",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://nfz.gov.pl/poz-plus/StructureDefinition/PLNfzCCHealthBalanceQuestionnaireResponse",
+  "version": "4.0.1",
+  "name": "PLNfzCCHealthBalanceQuestionnaireResponse",
+  "title": "Kwestionariusz bilansowy",
+  "status": "active",
+  "description": "Kwestionariusz bilansowy",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "QuestionnaireResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "QuestionnaireResponse.identifier",
+        "path": "QuestionnaireResponse.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.basedOn",
+        "path": "QuestionnaireResponse.basedOn",
+        "max": "0"
+      },
+      {
+        "id": "QuestionnaireResponse.partOf",
+        "path": "QuestionnaireResponse.partOf",
+        "max": "0"
+      },
+      {
+        "id": "QuestionnaireResponse.questionnaire",
+        "path": "QuestionnaireResponse.questionnaire",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.status",
+        "path": "QuestionnaireResponse.status",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.subject",
+        "path": "QuestionnaireResponse.subject",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://nfz.gov.pl/poz-plus/StructureDefinition/PLNfzCCPatient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.encounter",
+        "path": "QuestionnaireResponse.encounter",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.authored",
+        "path": "QuestionnaireResponse.authored",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.author",
+        "path": "QuestionnaireResponse.author",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://nfz.gov.pl/poz-plus/StructureDefinition/PLNfzCCPractitionerRole"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.source",
+        "path": "QuestionnaireResponse.source",
+        "max": "0"
+      },
+      {
+        "id": "QuestionnaireResponse.item",
+        "path": "QuestionnaireResponse.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 6
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview",
+        "path": "QuestionnaireResponse.item",
+        "sliceName": "healthStatusOverview",
+        "short": "Ocena ogólnego stanu zdrowia, aktywności fizycznej",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "patternString": "KBOS"
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.text",
+        "path": "QuestionnaireResponse.item.text",
+        "patternString": "Ocena ogólnego stanu zdrowia, aktywności fizycznej"
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item",
+        "path": "QuestionnaireResponse.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 5
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP1",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SOP1",
+        "short": "Jak ocenia Pan/i swój aktualny stan zdrowia",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP1.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SOP1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP1.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Jak ocenia Pan/i swój aktualny stan zdrowia",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP1.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP1.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP1.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala1"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP2",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SOP2",
+        "short": "Jak ocenia Pan/i swoją sprawność fizyczną?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP2.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SOP2",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP2.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Jak ocenia Pan/i swoją sprawność fizyczną?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP2.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP2.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP2.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala1"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP3",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SOP3",
+        "short": "Ile razy w tygodniu uprawia Pan/i umiarkowaną aktywność fizyczną?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP3.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SOP3",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP3.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Ile razy w tygodniu uprawia Pan/i umiarkowaną aktywność fizyczną?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP3.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP3.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP3.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala2"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP4",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SOP4",
+        "short": "Łączny czas (min) tygodniowo (umiarkowana aktywność fizyczna)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP4.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SOP4",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP4.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Łączny czas min tygodniowo umiarkowana aktywność fizyczna",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP4.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP4.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP4.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala20a"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP5",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SOP5",
+        "short": "Ile razy w tygodniu uprawia Pan/i intensywną aktywność fizyczną?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP5.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SOP5",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP5.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Ile razy w tygodniu uprawia Pan/i intensywną aktywność fizyczną?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP5.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP5.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP5.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala2"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP6",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SOP6",
+        "short": "Łączny czas (min) tygodniowo (intensywna aktywność fizyczna)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP6.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SOP6",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP6.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Łączny czas min tygodniowo intensywna aktywność fizyczna",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP6.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP6.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP6.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala20b"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP7",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SOP7",
+        "short": "Ocena stopnia aktywności fizycznej",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP7.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SOP7",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP7.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Ocena stopnia aktywności fizycznej",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP7.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP7.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:healthStatusOverview.item:SOP7.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/OcenaAktywnosciFizycznej"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory",
+        "path": "QuestionnaireResponse.item",
+        "sliceName": "familyMemberHistory",
+        "short": "Wywiad rodzinny",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "patternString": "KBWR"
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.text",
+        "path": "QuestionnaireResponse.item.text",
+        "patternString": "Wywiad rodzinny"
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item",
+        "path": "QuestionnaireResponse.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "CCRPS",
+        "short": "Choroba członka rodziny pierwszego stopnia",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 3
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSR",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CCRPSR",
+        "short": "Rodzaj członka rodziny pierwszego stopnia",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSR.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CCRPSR",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSR.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Rodzaj członka rodziny pierwszego stopnia",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSR.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSR.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSR.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/StopienPokrewienstwa"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSCZ",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CCRPSCZ",
+        "short": "Czy członek rodziny pierwszego stopnia żyje?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSCZ.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CCRPSCZ",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSCZ.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy członek rodziny pierwszego stopnia żyje?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSCZ.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSCZ.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSCZ.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSRO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CCRPSRO",
+        "short": "Rozpoznanie choroby członka rodziny pierwszego stopnia",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSRO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CCRPSRO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSRO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Rozpoznanie choroby członka rodziny pierwszego stopnia",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSRO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSRO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CCRPS.item:CCRPSRO.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "CDCR",
+        "short": "Choroba dalszego cłonka rodziny",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 2
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRR",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CDCRR",
+        "short": "Rodzaj dalszego członka rodzin",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRR.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CCRPSR",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRR.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Rodzaj dalszego członka rodziny",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRR.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRR.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRR.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/StopienDalszegoPokrewienstwa"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRRO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CDCRRO",
+        "short": "Rozpoznanie dalszego członka rodziny",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRRO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CCRPSRO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRRO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Rozpoznanie dalszego członka rodziny",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRRO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRRO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:familyMemberHistory.item:CDCR.item:CDCRRO.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:history",
+        "path": "QuestionnaireResponse.item",
+        "sliceName": "history",
+        "short": "Wywiad/badanie przedmiotowe",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "patternString": "KBBP"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.text",
+        "path": "QuestionnaireResponse.item.text",
+        "patternString": "Wywiad/badanie przedmiotowe"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item",
+        "path": "QuestionnaireResponse.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 8
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "disorder",
+        "short": "Historia aktualnych lub przebytych chorób pacjenta",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPAPC"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Historia aktualnych lub przebytych chorób pacjenta"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 2
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPR",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CAPR",
+        "short": "Rozpoznanie choroby",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPR.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CAPR",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPR.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Rozpoznanie choroby",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPR.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPR.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPR.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/icd-10"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPA",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CAPA",
+        "short": "Choroba aktualne/przebyte?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPA.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CAPA",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPA.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Choroba aktualna/przeebyta?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPA.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPA.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPA.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/AktualnaLubPrzebyta"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "CAPO",
+        "short": "Opis rozpoznania choroby",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "CAPO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Opis rozpoznania choroby",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:disorder.item:CAPO.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "tobaccoUse",
+        "short": "Używki: palenie tytoniu",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPUPT"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Używki: palenie tytoniu"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTA",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PTA",
+        "short": "Palenie tytoniu (aktualnie)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTA.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PTA",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTA.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Palenie tytoniu aktualnie",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTA.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTA.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTA.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTIL",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PTIL",
+        "short": "Palenie tytoniu (od ilu lat)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTIL.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PTIL",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTIL.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Palenie tytoniu od ilu lat",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTIL.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTIL.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTIL.answer.valueInteger",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueInteger",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTKPP",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PTKPP",
+        "short": "Czy kiedykolwiek palił/a Pan/i papierosy?",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTKPP.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PTKPP",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTKPP.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy kiedykolwiek palił/a Pan/i papierosy",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTKPP.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTKPP.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTKPP.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTNPO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PTNPO",
+        "short": "Nie palę od",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTNPO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PTNPO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTNPO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Nie palę od",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTNPO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTNPO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTNPO.answer.valueInteger",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueInteger",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTP",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PTP",
+        "short": "Paliłam/em",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTP.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PTP",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTP.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Paliłam/em",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTP.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTP.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTP.answer.valueInteger",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueInteger",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTWTF",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PTWTF",
+        "short": "Wynik testu Fagerstroma",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTWTF.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PTWTF",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTWTF.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Wynik testu Fagerstroma",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTWTF.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTWTF.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:tobaccoUse.item:PTWTF.answer.valueInteger",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueInteger",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "alcoholUse",
+        "short": "Używki: picie alkoholu",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPUPA"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Używki: picie alkoholu"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PACPNA",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PACPNA",
+        "short": "Jak często pije Pan/i napoje zawierające alkohol?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PACPNA.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PAPCNA",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PACPNA.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Jak często pije Pan/i napoje zawierające alkohol",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PACPNA.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PACPNA.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PACPNA.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala3"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PAIPA",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PAIPA",
+        "short": "Ile porcji alkoholu wypija Pan/i przeciętnie w okresie kiedy Pan/i pije alkohol?",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PAIPA.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PAIPA",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PAIPA.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Ile porcji alkoholu wypija Pan/i przeciętnie w okresie kiedy Pan/i pije alkohol",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PAIPA.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PAIPA.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PAIPA.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala4"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PA6WPA",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PA6WPA",
+        "short": "Jak często wypija Pan/i sześć albo więcej porcji alkoholu przy jednej okazji?",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PA6WPA.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PA6WPA",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PA6WPA.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Jak często wypija Pan/i sześć albo więcej porcji alkoholu przy jednej okazji",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PA6WPA.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PA6WPA.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:alcoholUse.item:PA6WPA.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Skala5"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "otherNonmedicalDrugUse",
+        "short": "Uzywki: inne",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPUIN"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Uzywki: inne"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.item.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "IUN",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.item.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Nazwa innej używki",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.item.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.item.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherNonmedicalDrugUse.item.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "otherThenBaseCareTreatment",
+        "short": "Leczenie poza POZ",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPLPP"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Leczenie poza POZ"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 3
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWD",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "LPPIWD",
+        "short": "Czy przebył/a Pan/i inwazyjne zabiegi diagnostyczne?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWD.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "LPPIWD",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWD.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy przebył/a Pan/i inwazyjne zabiegi diagnostyczne?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWD.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWD.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWD.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWDO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "LPPIWDO",
+        "short": "Czy przebył/a Pan/i inwazyjne zabiegi diagnostyczne? (opis)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWDO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "LPPIWDO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWDO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy przebył/a Pan/i inwazyjne zabiegi diagnostyczne? opis",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWDO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWDO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPIWDO.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPH",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "LPPH",
+        "short": "Czy była Pan/Pani hospitalizowana/y (nie dotyczy operacji)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPH.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "LPPH",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPH.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy była Pan/Pani hospitalizowana/y nie dotyczy operacji",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPH.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPH.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPH.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPHO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "LPPHO",
+        "short": "Czy była Pan/Pani hospitalizowana/y (nie dotyczy operacji)? (opis)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPHO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "LPPHO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPHO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy była Pan/Pani hospitalizowana/y nie dotyczy operacji? opis",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPHO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPHO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPHO.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "LPPO",
+        "short": "Czy była Pani/Pan operowana/y?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "LPPO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy była Pani/Pan operowana/y?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPO.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPOO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "LPPOO",
+        "short": "Czy była Pani/Pan operowana/y? (opis)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPOO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "LPPOO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPOO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy była Pani/Pan operowana/y? opis",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPOO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPOO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPOO.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPPS",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "LPPPS",
+        "short": "Opieka poradni specjalistycznej",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPPS.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "LPPPS",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPPS.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Opieka poradni specjalistycznej",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPPS.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPPS.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:otherThenBaseCareTreatment.item:LPPPS.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/TypPoradni"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "medicationUse",
+        "short": "Farmakoterapia",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPFTR"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Farmakoterapia"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 2
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTPL",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "FTPL",
+        "short": "Czy przyjmuje Pan/i leki na stałe?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTPL.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "FTPL",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTPL.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy przyjmuje Pan/i leki na stałe?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTPL.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTPL.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTPL.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTUL",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "FTUL",
+        "short": "Czy jest Pan/i uczulony/a na jakikolwiek lek?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTUL.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "FTUL",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTUL.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy jest Pan/i uczulony/a na jakikolwiek lek?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTUL.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTUL.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTUL.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTULO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "FTULO",
+        "short": "Czy jest Pan/i uczulony/a na jakikolwiek lek? (jaki?)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTULO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "FTULO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTULO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy jest Pan/i uczulony/a na jakikolwiek lek? jaki?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTULO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTULO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTULO.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "FTLEK",
+        "short": "Przyjmowany lek",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "FTLEK"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "patternString": "Przyjmowany lek"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item",
+        "path": "QuestionnaireResponse.item.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 4
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKEAN",
+        "path": "QuestionnaireResponse.item.item.item.item",
+        "sliceName": "FTLEKEAN",
+        "short": "Kod EAN leku",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKEAN.linkId",
+        "path": "QuestionnaireResponse.item.item.item.item.linkId",
+        "patternString": "FTLEKEAN",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKEAN.text",
+        "path": "QuestionnaireResponse.item.item.item.item.text",
+        "min": 1,
+        "patternString": "Kod EAN leku",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKEAN.answer",
+        "path": "QuestionnaireResponse.item.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKEAN.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKEAN.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKNL",
+        "path": "QuestionnaireResponse.item.item.item.item",
+        "sliceName": "FTLEKNL",
+        "short": "Nazwa leku",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKNL.linkId",
+        "path": "QuestionnaireResponse.item.item.item.item.linkId",
+        "patternString": "FTLEKNL",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKNL.text",
+        "path": "QuestionnaireResponse.item.item.item.item.text",
+        "min": 1,
+        "patternString": "Nazwa leku",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKNL.answer",
+        "path": "QuestionnaireResponse.item.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKNL.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKNL.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKDL",
+        "path": "QuestionnaireResponse.item.item.item.item",
+        "sliceName": "FTLEKDL",
+        "short": "Dawka leku",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKDL.linkId",
+        "path": "QuestionnaireResponse.item.item.item.item.linkId",
+        "patternString": "FTLEKDL",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKDL.text",
+        "path": "QuestionnaireResponse.item.item.item.item.text",
+        "min": 1,
+        "patternString": "Dawka leku",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKDL.answer",
+        "path": "QuestionnaireResponse.item.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKDL.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKDL.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKILD",
+        "path": "QuestionnaireResponse.item.item.item.item",
+        "sliceName": "FTLEKILD",
+        "short": "Dawkowanie leku (ile razy dziennie)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKILD.linkId",
+        "path": "QuestionnaireResponse.item.item.item.item.linkId",
+        "patternString": "FTLEKILD",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKILD.text",
+        "path": "QuestionnaireResponse.item.item.item.item.text",
+        "min": 1,
+        "patternString": "Dawkowanie lkeu ile razy dziennie",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKILD.answer",
+        "path": "QuestionnaireResponse.item.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKILD.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKILD.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKOK",
+        "path": "QuestionnaireResponse.item.item.item.item",
+        "sliceName": "FTLEKOK",
+        "short": "Od kiedy",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKOK.linkId",
+        "path": "QuestionnaireResponse.item.item.item.item.linkId",
+        "patternString": "FTLEKOK",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKOK.text",
+        "path": "QuestionnaireResponse.item.item.item.item.text",
+        "min": 1,
+        "patternString": "Od kiedy",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKOK.answer",
+        "path": "QuestionnaireResponse.item.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKOK.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:medicationUse.item:FTLEK.item:FTLEKOK.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "immunization",
+        "short": "Inne (informacje o szczepieniach)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPIIS"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Inne (informacje o szczepieniach)"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 2
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPG",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "INSPG",
+        "short": "Czy pacjent/ka miał/a wykonywane szczepienie przeciwko grypie?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPG.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "INSPG",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPG.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy pacjent/ka miał/a wykonywane szczepienie przeciwko grypie?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPG.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPG.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPG.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPGR",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "INSPGR",
+        "short": "Czy pacjent/ka miał/a wykonywane szczepienie przeciwko grypie? (kiedy - rok?)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPGR.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "INSPG",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPGR.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy pacjent/ka miał/a wykonywane szczepienie przeciwko grypie? kiedy - rok?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPGR.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPGR.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPGR.answer.valueInteger",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueInteger",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWB",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "INSPWB",
+        "short": "Czy kiedykolwiek pacjent/ka miał/a wykonywanie szczepienie przeciwko WZW typu B?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWB.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "INSPWB",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWB.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy kiedykolwiek pacjent/ka miał/a wykonywanie szczepienie przeciwko WZE typu B?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWB.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWB.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWB.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWBR",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "INSPWBR",
+        "short": "Czy kiedykolwiek pacjent/ka miał/a wykonywanie szczepienie przeciwko WZE typu B? (kiedy - rok?)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWBR.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "INSPWBR",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWBR.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy kiedykolwiek pacjent/ka miał/a wykonywanie szczepienie przeciwko WZE typu B? kiedy - rok?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWBR.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWBR.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:immunization.item:INSPWBR.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "condition",
+        "short": "Zgłaszane dolegliwości",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBBPZDL"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Zgłaszane dolegliwości"
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZO",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "ZDZO",
+        "short": "Czy w ostatnim czasie zauważyła Pani/Pan któreś z objawów z listy?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZO.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "ZDZO",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZO.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy w ostatnim czasie zauważyła Pani/Pan któreś z objawów z listy?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZO.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZO.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZO.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZD",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "ZDZD",
+        "short": "Zgłaszana dolegliwość",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZD.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "ZDZD",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZD.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Zgłaszana dolegliwość",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZD.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZD.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:history.item:condition.item:ZDZD.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/Dolegliwosc"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation",
+        "path": "QuestionnaireResponse.item",
+        "sliceName": "preventiveProgramParticipation",
+        "short": "Uczestnictwo w programach profilaktycznych/przesiewowych",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "patternString": "KBUP"
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.text",
+        "path": "QuestionnaireResponse.item.text",
+        "patternString": "Uczestnictwo w programach profilaktycznych/przesiewowych"
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item",
+        "path": "QuestionnaireResponse.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 5
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "programUse",
+        "short": "Korzystanie z programu profilaktycznego",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "PPKO"
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Korzystanie z programu profilaktycznego"
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPDOB",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PPDOB",
+        "short": "Data ostatniego badania",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPDOB.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PPDOB",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPDOB.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Data ostatniego badania",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPDOB.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPDOB.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "date"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPDOB.answer.valueDate",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueDate",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPWCN",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PPWCN",
+        "short": "Wynik (czy w normie)",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPWCN.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PPWCN",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPWCN.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Wynik czy w normie",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPWCN.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPWCN.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPWCN.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPZAL",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PPZAL",
+        "short": "Zalecenia",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPZAL.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PPZAL",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPZAL.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Zalecenia",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPZAL.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPZAL.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programUse.item:PPZAL.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "programQualification",
+        "short": "Kwalifikacja do programu profilaktycznego",
+        "min": 5,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "PPKW"
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Kwalifikacja do programu profilaktycznego"
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 2
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPNP",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PPNP",
+        "short": "Nazwa programu profilaktycznego",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPNP.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PPNP",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPNP.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Nazwa programu profilaktycznego",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPNP.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPNP.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPNP.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/ProgramProfilaktyczny"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPKWW",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "PPKWW",
+        "short": "Czy zakwalifikowany/a do progrmu profilaktycznego?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPKWW.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "PPNP",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPKWW.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Czy zakwalifikowany/a do progrmu profilaktycznego?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPKWW.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPKWW.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:preventiveProgramParticipation.item:programQualification.item:PPKWW.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment",
+        "path": "QuestionnaireResponse.item",
+        "sliceName": "mentalStateAssessment",
+        "short": "Ocena stanu psychicznego",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "patternString": "KBOP"
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.text",
+        "path": "QuestionnaireResponse.item.text",
+        "patternString": "Ocena stanu psychicznego"
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item",
+        "path": "QuestionnaireResponse.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 4
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPPDZ",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SPPDZ",
+        "short": "Czy w ciągu ostatniego miesiąca czuł/a się Pan/i przygnębiony/a, depresyjny/a lub zrozpaczony/a?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPPDZ.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SPPDZ",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPPDZ.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Czy w ciągu ostatniego miesiąca czuł/a się Pan/i przygnębiony/a depresyjny/a lub zrozpaczony/a?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPPDZ.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPPDZ.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPPDZ.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPMZP",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SPMZP",
+        "short": "Czy w ciągu ostatniego miesiąca był/a Pan/i mniej zainteresowany/a większością spraw lub odczuwał/a mniejszą przyjemność z wykonywanych zajęć?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPMZP.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SPMZP",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPMZP.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Czy w ciągu ostatniego miesiąca był/a Pan/i mniej zainteresowany/a większością spraw lub odczuwał/a mniejszą przyjemność z wykonywanych zajęć?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPMZP.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPMZP.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPMZP.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPCHP",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SPCHP",
+        "short": "Czy jest coś, w czym chciał(a)by Pan/i, by Pani/u pomóc?",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPCHP.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SPCHP",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPCHP.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Czy jest coś w czym chciał/a by Pan/i by Pani/u pomóc?",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPCHP.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPCHP.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPCHP.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPWOS",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "SPWOS",
+        "short": "Wynik oceny samopoczucia psychicznego",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPWOS.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "SPWOS",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPWOS.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "min": 1,
+        "patternString": "Wynik oceny samopoczucia psychicznego",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPWOS.answer",
+        "path": "QuestionnaireResponse.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPWOS.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:mentalStateAssessment.item:SPWOS.answer.valueCoding",
+        "path": "QuestionnaireResponse.item.item.answer.valueCoding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://nfz.gov.pl/poz-plus/ValueSet/OcenaSamopoczuciaPsychicznego"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary",
+        "path": "QuestionnaireResponse.item",
+        "sliceName": "summary",
+        "short": "Podsumowanie bilansu",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.linkId",
+        "path": "QuestionnaireResponse.item.linkId",
+        "patternString": "KBPB"
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.text",
+        "path": "QuestionnaireResponse.item.text",
+        "patternString": "Podsumowanie bilansu"
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item",
+        "path": "QuestionnaireResponse.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits",
+        "path": "QuestionnaireResponse.item.item",
+        "sliceName": "followUpVisits",
+        "short": "Dalsze wizyty",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.linkId",
+        "path": "QuestionnaireResponse.item.item.linkId",
+        "patternString": "KBPBDW"
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.text",
+        "path": "QuestionnaireResponse.item.item.text",
+        "patternString": "Dalsze wizyty"
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item",
+        "path": "QuestionnaireResponse.item.item.item",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "linkId"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 3
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWE",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "DWWE",
+        "short": "Kwalifikacja pacjenta do wizyty edukacyjnej",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWE.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "DWWE",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWE.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Kwalifikacja pacjenta do wizyty edukacyjnej",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWE.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWE.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWE.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWEZ",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "DWWEZ",
+        "short": "Kwalifikacja pacjenta do wizyty edukacyjnej? (zakres tematyczny)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWEZ.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "DWWEZ",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWEZ.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Kwalifikacja pacjenta do wizyty edukacyjnej? zakres tematyczny",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWEZ.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWEZ.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWEZ.answer.valueString",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueString",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSD",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "DWWSD",
+        "short": "Kwalifikacja pacjenta do wizyt specjalistycznych dietetycznych",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSD.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "DWWSD",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSD.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Kwalifikacja pacjenta do wizyt specjalistycznych dietetycznych",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSD.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSD.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSD.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSP",
+        "path": "QuestionnaireResponse.item.item.item",
+        "sliceName": "DWWSP",
+        "short": "Kwalifikacja pacjenta do wizyt specjalistycznych psychologicznych",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSP.linkId",
+        "path": "QuestionnaireResponse.item.item.item.linkId",
+        "patternString": "DWWSP",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSP.text",
+        "path": "QuestionnaireResponse.item.item.item.text",
+        "min": 1,
+        "patternString": "Kwalifikacja pacjenta do wizyt specjalistycznych psychologicznych",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSP.answer",
+        "path": "QuestionnaireResponse.item.item.item.answer",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSP.answer.value[x]",
+        "path": "QuestionnaireResponse.item.item.item.answer.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "QuestionnaireResponse.item:summary.item:followUpVisits.item:DWWSP.answer.valueBoolean",
+        "path": "QuestionnaireResponse.item.item.item.answer.valueBoolean",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      }
+    ]
+  }
+}
